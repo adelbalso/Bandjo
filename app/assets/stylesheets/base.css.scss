@@ -4,11 +4,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$yellow: #F5D865;
+$primary_color: #f2cd6f;
 
 body {
   font-family: 'Raleway' !important;
-  background-color: $yellow;
+  background-color: $primary_color;
+  color: white;
+  @include box-sizing(border-box);
+}
+
+#container {
+  width: 960px;
+  margin: 0 auto;
 }
 
 a {
@@ -24,17 +31,22 @@ a, button, input {
   }
 }
 
-input[type='text'], input[type='email'], input[type='password'] {
-  @include border-radius(3px);
+input[type='text'], input[type='email'], input[type='password'], textarea {
+  @include border-radius(5px);
+  display: block;
   height: 3em;
-  width: 20em;
+  width: 100%;
   border: none;
   margin: 0.5em 0 2em 0;
-}
+  border: 3px solid shade($primary_color, 15%);
+  padding: 0 1em;
+  font-size: 1em;
+  color: shade($primary_color, 40%);
 
-#container {
-  width: 960px;
-  margin: 0 auto;
+  &:focus {
+    outline: none;
+    border: 3px solid shade($primary_color, 35%);
+  }
 }
 
 #user_nav {
@@ -60,13 +72,18 @@ input[type='text'], input[type='email'], input[type='password'] {
     padding: 1em;
     margin-top: 3em;
     background-color: rgba(0,0,0,0);
-    @include border-radius(6px);
+    @include border-radius(5px);
     // border-radius: 6px;
     font-size: 1.5em;
 
     &:hover {
       background-color: white;
-      color: $yellow;
+      color: $primary_color;
     }
   }
+}
+
+.formContainer {
+  width: 20em;
+  margin: 0 auto;
 }
