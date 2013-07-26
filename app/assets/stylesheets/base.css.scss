@@ -1,3 +1,42 @@
 // Place all the styles related to the Base controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$yellow: #F5D865;
+
+// * {
+//   @include transition-property(all);
+//   @include transition-duration(.3s);
+// }
+
+body {
+  font-family: 'Raleway';
+  background-color: $yellow;
+}
+
+#landingPage {
+  h1 {
+    color: white;
+    font-size: 7em;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 0.2em;
+  }
+
+  button {
+    display: block;
+    margin: 0 auto;
+    border: 0.2em solid white;
+    color: white;
+    padding: 1em;
+    background-color: rgba(0,0,0,0);
+    // @include border-radius(3px);
+    border-radius: 6px;
+    font-size: 1.5em;
+
+    &:hover {
+      background-color: white;
+      color: $yellow;
+    }
+  }
+}

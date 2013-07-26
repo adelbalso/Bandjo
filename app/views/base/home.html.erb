@@ -1,14 +1,17 @@
-<h1> Welcome to Bandjo </h1>
+<div id="landingPage">
+	<h1>Bandjo</h1>
 
-<p> Support local music in NYC, like the bands below! </p>
-
-<p><%= link_to 'All Bands', bands_path %></p>
-
+	<button>discover great music</button>
+</div>
 
 <div id="putTheWidgetHere"></div>
+
 <script type="text/JavaScript">
   SC.oEmbed("http://soundcloud.com/forss/sets/soulhack", {color: "ff0066"},  document.getElementById("putTheWidgetHere"));
+
+  $("#putTheWidgetHere").hide();
+  $("#landingPage button").click(function() {
+  	$("#landingPage").fadeOut(300)
+  	$("#putTheWidgetHere").delay(300).fadeIn(300);
+  })
 </script>
-
-
-
