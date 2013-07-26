@@ -1,0 +1,14 @@
+<h1> Here are all the bands </h1>
+
+<% @bands.each do |band| %>
+	This band has <%= band.up_votes %> votes
+	<%= raw band.track %>
+	<%= link_to "Edit Band", edit_band_path(band) %>
+	<%= link_to 'Upvote!', upvote_band_url(band), :method => :post %>
+	<%= link_to 'Downvote!', downvote_band_url(band), :method => :post %>
+<% end %>
+
+
+<%= link_to "Add Band", new_band_path %>
+
+<%= link_to "Home", root_path %>

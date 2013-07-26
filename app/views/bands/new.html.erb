@@ -1,0 +1,11 @@
+<h1> Add a new band to Bandjo </h1> 
+
+<%= link_to "Cancel", root_path %>
+
+<%= simple_form_for @band do |f| %>
+  <%= f.input :name, label: "What's the name of your band?" %>
+  <%= f.input :hometown, label: "Where are you guys from?" %>
+  <%= f.input :biography, label: 'Tell us a little more about you guys.' %>
+  <%= f.input :track, label: 'Link us to some of your soundcloud tunes' %>
+  <%= f.button :submit %>
+ <% end %>
