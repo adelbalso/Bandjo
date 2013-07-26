@@ -1,17 +1,46 @@
+@import "compass";
+
 // Place all the styles related to the Base controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $yellow: #F5D865;
 
-// * {
-//   @include transition-property(all);
-//   @include transition-duration(.3s);
-// }
-
 body {
-  font-family: 'Raleway';
+  font-family: 'Raleway' !important;
   background-color: $yellow;
+}
+
+a {
+  color: white;
+}
+
+a, button, input {
+  @include transition-property(all);
+  @include transition-duration(.3s);
+
+  &:hover {
+    color: #E2F3F0;
+  }
+}
+
+input[type='text'], input[type='email'], input[type='password'] {
+  @include border-radius(3px);
+  height: 3em;
+  width: 20em;
+  border: none;
+  margin: 0.5em 0 2em 0;
+}
+
+#container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#user_nav {
+  text-align: center;
+  margin: 2em 0;
+  color: white;
 }
 
 #landingPage {
@@ -20,7 +49,7 @@ body {
     font-size: 7em;
     font-weight: 300;
     text-align: center;
-    margin-top: 0.2em;
+    margin: 0.2em 0;
   }
 
   button {
@@ -29,9 +58,10 @@ body {
     border: 0.2em solid white;
     color: white;
     padding: 1em;
+    margin-top: 3em;
     background-color: rgba(0,0,0,0);
-    // @include border-radius(3px);
-    border-radius: 6px;
+    @include border-radius(6px);
+    // border-radius: 6px;
     font-size: 1.5em;
 
     &:hover {
