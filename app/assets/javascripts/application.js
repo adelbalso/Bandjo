@@ -14,6 +14,3 @@
 //= require jquery_ujs
 //= require_tree .
 
-<script type="text/JavaScript">
-  SC.oEmbed("http://soundcloud.com/forss/sets/soulhack", {color: "ff0066"},  document.getElementById("putTheWidgetHere"));
-</script>
