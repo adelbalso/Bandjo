@@ -5,6 +5,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $primary_color: #f2cd6f;
+$link_hover: #E2F3F0;
+
+@mixin test() {
+  border: 1px solid blue;
+}
 
 body {
   font-family: 'Raleway' !important;
@@ -27,8 +32,14 @@ a, button, input {
   @include transition-duration(.3s);
 
   &:hover {
-    color: #E2F3F0;
+    color: $link_hover;
   }
+}
+
+p {
+  font-size: 1.3em !important;
+  line-height: 1.5em !important;
+
 }
 
 input[type='text'], input[type='email'], input[type='password'], textarea {
@@ -53,27 +64,63 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
   text-align: center;
   margin: 2em 0;
   color: white;
+  
+  a {
+    padding: 0 1em;
+  }
 }
 
 #landingPage {
   h1 {
     color: white;
+    text-align: center;
     font-size: 7em;
     font-weight: 300;
-    text-align: center;
     margin: 0.2em 0;
+    border-bottom: 2px dashed white;
+    border-top: 2px dashed white;
+    padding: 0.3em 0;
+  }
+
+  h2 {
+    font-size: 2em;
+    padding: 0.5em 0;
+  }
+
+  .pitch {
+    float: left;
+    width: 50%;
+    @include border-radius(5px);
+
+    .tagline {
+      background-color: tint($primary_color, 20%);
+      display: inline-block;
+      padding: 0.5em;
+      margin: 0.5em;
+
+      .textEmphasis {
+        color: #70838C;
+        // font-weight: 600;
+        clear: left;
+      }
+    }
+  }
+
+  .callToAction {
+    text-align: center;
+    float: right;
+    width: 50%;
+    margin-top: 0.75em;
   }
 
   button {
     display: block;
-    margin: 0 auto;
+    margin: 1em auto;
     border: 0.2em solid white;
     color: white;
     padding: 1em;
-    margin-top: 3em;
     background-color: rgba(0,0,0,0);
     @include border-radius(5px);
-    // border-radius: 6px;
     font-size: 1.5em;
 
     &:hover {
