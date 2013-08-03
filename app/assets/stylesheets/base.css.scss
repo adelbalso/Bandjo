@@ -89,14 +89,14 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
 
   .pitch {
     float: left;
-    width: 50%;
+    width: 33%;
     @include border-radius(5px);
 
     .tagline {
       background-color: tint($primary_color, 20%);
       display: inline-block;
       padding: 0.5em;
-      margin: 0.5em;
+      margin: 0.5em 0;
 
       .textEmphasis {
         color: #70838C;
@@ -109,23 +109,22 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
   .callToAction {
     text-align: center;
     float: right;
-    width: 50%;
-    margin-top: 0.75em;
+    width: 66%;
+    margin-top: 2.5em;
   }
 
   button {
     display: block;
     margin: 1em auto;
-    border: 0.2em solid white;
+    border: none;
     color: white;
     padding: 1em;
-    background-color: rgba(0,0,0,0);
+    background-color: #E87825;
     @include border-radius(5px);
     font-size: 1.5em;
 
     &:hover {
-      background-color: white;
-      color: $primary_color;
+      background-color: shade(#E87825, 10%);
     }
   }
 }
