@@ -13,7 +13,8 @@ $link_hover: #E2F3F0;
 
 body {
   font-family: 'Raleway' !important;
-  background-color: $primary_color;
+  // background-color: $primary_color;
+  background-image: url("http://heightslibrary.org/wordpress/music/wp-content/uploads/2012/02/concert-audience-stock1214.jpg");
   color: white;
   @include box-sizing(border-box);
 }
@@ -71,19 +72,49 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
 }
 
 #landingPage {
-  h1 {
+  .brand {
+    background-color: RGBA(244,215,139,0.5);
     color: white;
     text-align: center;
     font-size: 7em;
     font-weight: 300;
     margin: 0.2em 0;
-    border-bottom: 2px dashed white;
-    border-top: 2px dashed white;
+    // border-bottom: 2px dashed white;
+    // border-top: 2px dashed white;
     padding: 0.3em 0;
+    height: 100px;
+    @include clearfix();
+
+    .banjoLogoHead {
+      float: left;
+
+      img {
+        float: right;
+      }
+    }
+
+    h1 {
+      float: left;
+      font-size: 0.8em;
+      margin: 0 0.5em;
+    }
+
+    .banjoLogoBody {
+      float: left;
+
+      img {
+        float: left;
+      }
+    }
+
+    img {
+      height: 50%;
+      width: 50%;
+    }
   }
 
   h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     padding: 0.5em 0;
   }
 
@@ -93,8 +124,9 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
     @include border-radius(5px);
 
     .tagline {
-      background-color: tint($primary_color, 20%);
-      display: inline-block;
+      background-color: RGBA(244,215,139,0.5);
+      text-align: center;
+      // display: inline-block;
       padding: 0.5em;
       margin: 0.5em 0;
 
@@ -107,9 +139,11 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
   }
 
   .callToAction {
+    border: 2px dashed white;
+    margin: 0 5%;
     text-align: center;
     float: right;
-    width: 66%;
+    width: 51%;
     margin-top: 2.5em;
   }
 
