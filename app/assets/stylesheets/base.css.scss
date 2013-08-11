@@ -4,17 +4,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$primary_color: #f2cd6f;
+$primary_color: #3e1d56;
 $link_hover: #E2F3F0;
 
 @mixin test() {
   border: 1px solid blue;
 }
 
+@mixin gradient($from, $to) {
+  /* fallback/image non-cover color */
+  background-color: $from;
+ 
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient($from, $to);
+ 
+  /* Safari 4+, Chrome 1+ */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+ 
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient($from, $to);
+ 
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient($from, $to);
+}
+
 body {
   font-family: 'Raleway' !important;
-  // background-color: $primary_color;
-  background-image: url("http://heightslibrary.org/wordpress/music/wp-content/uploads/2012/02/concert-audience-stock1214.jpg");
+  background-color: $primary_color;
+  // background-image: url("http://heightslibrary.org/wordpress/music/wp-content/uploads/2012/02/concert-audience-stock1214.jpg");
   color: white;
   @include box-sizing(border-box);
 }
@@ -63,6 +80,25 @@ ul#user_nav {
 
   li {
     display: inline;
+
+    &.fansLink {
+      display: none;
+    }
+
+    &.bandsFansLink {
+      a {
+        text-decoration: none;
+        padding: 0.5em;
+        @include border-radius(4px);
+        border: 2px solid white;
+
+        &:hover {
+          border: 2px solid $link_hover;
+          background-color: $link_hover;
+          color: $primary_color;
+        }
+      }
+    }
   }
   
   a {
@@ -74,44 +110,39 @@ ul#user_nav {
   .brand {
     position: absolute;
     left: 75px;
-    bottom: 295px;
-    background-color: RGBA(244,215,139,0.5);
+    bottom: 385px;
     color: white;
     text-align: center;
     font-size: 7em;
     font-weight: 300;
-    margin: 0.2em 0;
-    // border-bottom: 2px dashed white;
-    // border-top: 2px dashed white;
-    padding: 0.3em 0;
     height: 100px;
     @include clearfix();
 
     .banjoLogoHead {
       float: left;
+      width: 110px;
 
       img {
-        float: right;
+        width: 110px;
       }
     }
 
     h1 {
       float: left;
       font-size: 0.8em;
-      margin: 0 0.5em;
+      margin: 0 0.2em;
     }
 
     .banjoLogoBody {
       float: left;
+      width: 140px;
 
       img {
-        float: left;
+        width: 140px;
       }
     }
 
     img {
-      height: 50%;
-      width: 50%;
     }
   }
 
@@ -123,38 +154,33 @@ ul#user_nav {
   .pitch {
     position: absolute;
     left: 75px;
-    bottom: 200px;
+    bottom: 290px;
     width: 600px;
-    @include border-radius(5px);
 
     .tagline {
-      background-color: RGBA(0,0,0,0.2);
-      text-align: center;
-      // display: inline-block;
-      padding: 0.5em;
-      margin: 0.5em 0;
-
       .textEmphasis {
-        color: RGBA(244,215,139,1);
+        color: #1AD3D4;
         // font-weight: 600;
         clear: left;
+      }
+
+      &.bands {
+        display: none;
       }
     }
   }
 
   .callToAction {
     position: absolute;
-    left: 75px;
-    bottom: 75px;
-    border: 2px dashed white;
+    right: 75px;
+    bottom: 290px;
     text-align: center;
-    margin-top: 2.5em;
-    padding: 1em;
+    // margin-left: 150px;
 
     button {
       display: block;
       border: none;
-      color: white;
+      color: #fff;
       padding: 1em;
       background-color: #E87825;
       @include border-radius(5px);
@@ -163,6 +189,20 @@ ul#user_nav {
       &:hover {
         background-color: shade(#E87825, 10%);
       }
+    }
+  }
+
+  .player {
+    height: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+
+    img {
+      opacity: 0;
+      display: block;
+      margin: 0 auto;
     }
   }
 }

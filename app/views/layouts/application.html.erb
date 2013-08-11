@@ -16,7 +16,8 @@
 <body>
   <div id="container">
     <ul id="user_nav">
-      <li>bands</li>
+      <li class="bandsFansLink bandsLink"><a href="#">bands</a></li>
+      <li class="bandsFansLink fansLink"><a href="#">fans</a></li>
       <% if user_signed_in? %>
         <li>logged in as <strong><%= current_user.email %></strong>.</li>
         <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
