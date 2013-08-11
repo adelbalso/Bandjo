@@ -6,6 +6,7 @@
 
 $primary_color: #3e1d56;
 $link_hover: #E2F3F0;
+$cta-color: #E87825;
 
 @mixin test() {
   border: 1px solid blue;
@@ -52,7 +53,13 @@ a, button, input {
 p {
   font-size: 1.3em !important;
   line-height: 1.5em !important;
+}
 
+button {
+  &:focus {
+    outline: none;
+    border: 3px solid tint($cta_color, 35%) !important;
+  }
 }
 
 input[type='text'], input[type='email'], input[type='password'], textarea {
@@ -187,13 +194,15 @@ ul#user_nav {
       border: none;
       float: right;
       color: #fff;
-      padding: 1em;
-      background-color: #E87825;
+      padding: 0.7em;
+      background-color: $cta_color;
       @include border-radius(5px);
+      border: 3px solid $cta_color;
       font-size: 1.5em;
 
       &:hover {
-        background-color: shade(#E87825, 10%);
+        background-color: shade($cta_color, 10%);
+        border: 3px solid shade($cta_color, 10%);
       }
 
       &.bandsCTA {
