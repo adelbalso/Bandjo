@@ -65,11 +65,11 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
   border: 3px solid shade($primary_color, 15%);
   padding: 0 1em;
   font-size: 1em;
-  color: shade($primary_color, 40%);
+  color: shade($primary_color, 20%);
 
   &:focus {
     outline: none;
-    border: 3px solid shade($primary_color, 35%);
+    border: 3px solid tint($primary_color, 35%);
   }
 }
 
@@ -174,12 +174,18 @@ ul#user_nav {
     position: absolute;
     right: 75px;
     bottom: 290px;
+    width: 300px;
     text-align: center;
     // margin-left: 150px;
+
+    input {
+      float: right;
+    }
 
     button {
       display: block;
       border: none;
+      float: right;
       color: #fff;
       padding: 1em;
       background-color: #E87825;
