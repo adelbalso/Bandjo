@@ -19,14 +19,6 @@
     <ul id="user_nav">
       <li class="bandsFansLink bandsLink"><a href="#">bands</a></li>
       <li class="bandsFansLink fansLink"><a href="#">fans</a></li>
-      <% if user_signed_in? %>
-        <li>logged in as <strong><%= current_user.email %></strong>.</li>
-        <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-        <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to "sign up", new_user_registration_path %></li>
-        <li><%= link_to "login", new_user_session_path %></li>
-      <% end %>
     </ul>
 
     <% flash.each do |name, msg| %>
