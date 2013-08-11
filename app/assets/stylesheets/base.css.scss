@@ -95,6 +95,54 @@ ul#user_nav {
   }
 }
 
+@-webkit-keyframes slideOne {
+  0% {
+      @include rotate(5deg);
+  }
+  10% {
+      @include rotate(8deg);
+  }
+  90% {
+    @include rotate(10deg);
+  }
+  100% {
+    @include rotate(5deg);
+  }
+}
+
+@-webkit-keyframes slideTwo {
+  0% {
+      @include rotate(10deg);
+  }
+  10% {
+      @include rotate(8deg);
+  }
+  90% {
+    @include rotate(5deg);
+  }
+  100% {
+    @include rotate(10deg);
+  }
+}
+
+.stageLight {
+  // background-image: url('images/stage_light.png');
+  position: absolute;
+
+  &.one {
+    top: -5px;
+    right: 0px;
+    -webkit-animation: slideOne 6s linear infinite;
+  }
+
+  &.two {
+    top: -10px;
+    right: -180px;
+    @include rotate(10deg); 
+    -webkit-animation: slideTwo 6s linear infinite;
+  }
+}
+
 #landingPage {
   .landingPageContent {
       position: absolute;
