@@ -17,7 +17,7 @@
 		</div>
 
 		<div class="pitch">
-			<p class="fans tagline">Rising bands. <span class="textEmphasis">Different musical genres.</span> Initimate concerts. <span class="textEmphasis">Exclusive community.</span> New York City.</p>
+			<p class="fans tagline">Rising bands. <span class="textEmphasis">Various musical genres.</span> Initimate concerts. <span class="textEmphasis">Exclusive community.</span> New York City.</p>
 			<p class="bands tagline">Immediate fanbase. <span class="textEmphasis">Regular gigs.</span> Community funding. <span class="textEmphasis">Do what you love.</span> New York City.</p>
 		</div>
 		<div class="learnMore">
@@ -27,7 +27,7 @@
 		<div class="learnMoreContent">
 			<p>If you’re like us, then you know big concerts with famous artists don’t compare to the thrill of “discovering” a rising musician at your nearby dive bar. We’re trying to make more of that happen by creating a community where fans support local artists for a small monthly fee, and in return get concerts, swag, and clout to vote musicians into the network.</p>
 			<br>
-			<p>Want to start the next wave of music discovery? Support and <a class="discover" href="#">discover</a> bands like these by becoming a Bandjo fan.</p>
+			<p>Want to start the next wave of music discovery? Support and <a class="discover" href="#">discover</a> bands like those below by becoming a Bandjo fan.</p>
 		</div>
 	</div>
 
@@ -38,15 +38,14 @@
 	</div>
 
 	<div class="player">
-		<%= image_tag("track_img.png") %>
+		<iframe id="sc-widget" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F7794254&show_artwork=false&show_comments=false&show_playcount=false&sharing=false&liking=false&buying=false&color=3e1d56&themer=3e1d56&auto_play=true"></iframe>
 	</div>
+
 	<div class="player overlay"></div>
 </div>
 
-<div id="putTheWidgetHere"></div>
 
 <script type="text/JavaScript">
-  SC.oEmbed("http://soundcloud.com/forss/sets/soulhack", {color: "#3e1d56"},  document.getElementById("putTheWidgetHere"));
 
   $(".bandsLink").click(function() {
   	$(this).fadeOut(300);
