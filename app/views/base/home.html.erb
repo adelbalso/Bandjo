@@ -32,18 +32,17 @@
   </div>
 
   <div class="callToAction">
+    <input class="tunesLink" type="text" placeholder="link to your tunes">
     <input type="email" placeholder="john@email.com">
     <button class="fansCTA">Sounds cool, I'm in</button>
     <button class="bandsCTA">Sounds cool, I'm in</button>
   </div>
 
   <div class="player">
-    <div class="prev">
-      <div class="prevButton"></div>
+    <div class="playerControl prev">
     </div>
     <iframe id="sc-widget" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F7794254&show_artwork=false&show_comments=false&show_playcount=false&sharing=false&liking=false&buying=false&color=3e1d56&themer=3e1d56&auto_play=false&download=false"></iframe>
-    <div class="next">
-      <div class="nextButton"></div>
+    <div class="playerControl next">
     </div>
   </div>
 
@@ -69,6 +68,7 @@
 
   $(".bandsLink").click(function() {
     $(this).fadeOut(300);
+    $(".tunesLink").animate({"opacity": 1},300)
     $(".fansLink").delay(300).fadeIn(300).css({"display":"inline"});
     $(".fans.tagline").fadeOut(300);
     $(".bands.tagline").delay(300).fadeIn(300);
@@ -78,6 +78,7 @@
 
   $(".fansLink").click(function() {
     $(this).fadeOut(300);
+    $(".tunesLink").animate({"opacity": 0},300)
     $(".bandsLink").delay(300).fadeIn(300)
     $(".bands.tagline").fadeOut(300);
     $(".fans.tagline").delay(300).fadeIn(300);
@@ -94,6 +95,7 @@
   $("a.discover").click(function() {
     $(".player.overlay").fadeIn(150)
     $(".player.overlay").fadeOut(300)
+    widget1.next()
   })
 
   $("#putTheWidgetHere").hide();

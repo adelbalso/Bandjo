@@ -26,7 +26,7 @@ a {
   color: white;
 }
 
-a, button, input {
+a, button, input, .playerControl {
   @include transition-property(all);
   @include transition-duration(.3s);
 
@@ -238,6 +238,10 @@ ul#user_nav {
 
     input {
       float: right;
+
+      &.tunesLink {
+        opacity: 0;
+      }
     }
 
     button {
