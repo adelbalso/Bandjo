@@ -1,93 +1,113 @@
 <div id="landingPage">
-	<div class="stageLight one">
-		<%= image_tag("stage_light.png") %>
-	</div>
-	<div class="stageLight two">
-		<%= image_tag("stage_light.png") %>
-	</div>
-	<div class="landingPageContent">
-		<div class="brand">
-			<div class="banjoLogoHead">
-				<%= image_tag("banjo_head.png") %>
-			</div>
-			<h1>Bandjo</h1>
-			<div class="banjoLogoBody">
-				<%= image_tag("banjo_body.png") %>
-			</div>
-		</div>
+  <div class="stageLight one">
+    <!-- <%= image_tag("stage_light.png") %> -->
+  </div>
+  <div class="stageLight two">
+    <!-- <%= image_tag("stage_light.png") %> -->
+  </div>
+  <div class="landingPageContent">
+    <div class="brand">
+      <div class="banjoLogoHead">
+        <%= image_tag("banjo_head.png") %>
+      </div>
+      <h1>Bandjo</h1>
+      <div class="banjoLogoBody">
+        <%= image_tag("banjo_body.png") %>
+      </div>
+    </div>
 
-		<div class="pitch">
-			<p class="fans tagline">Rising bands. <span class="textEmphasis">Various musical genres.</span> Initimate concerts. <span class="textEmphasis">Exclusive community.</span> New York City.</p>
-			<p class="bands tagline">Immediate fanbase. <span class="textEmphasis">Regular gigs.</span> Community funding. <span class="textEmphasis">Do what you love.</span> New York City.</p>
-		</div>
-		<div class="learnMore">
-			<a href="#">Learn more >></a>
-		</div>
+    <div class="pitch">
+      <p class="fans tagline">Rising bands. <span class="textEmphasis">Various musical genres.</span> Initimate concerts. <span class="textEmphasis">Exclusive community.</span> New York City.</p>
+      <p class="bands tagline">Immediate fanbase. <span class="textEmphasis">Regular gigs.</span> Community funding. <span class="textEmphasis">Do what you love.</span> New York City.</p>
+    </div>
+    <div class="learnMore">
+      <a href="#">Learn more >></a>
+    </div>
 
-		<div class="learnMoreContent">
-			<p>If you’re like us, then you know big concerts with famous artists don’t compare to the thrill of “discovering” a rising musician at your nearby dive bar. We’re trying to make more of that happen by creating a community where fans support local artists for a small monthly fee, and in return get concerts, swag, and clout to vote musicians into the network.</p>
-			<br>
-			<p>Want to start the next wave of music discovery? Support and <a class="discover" href="#">discover</a> bands like those below by becoming a Bandjo fan.</p>
-		</div>
-	</div>
+    <div class="learnMoreContent">
+      <p>If you’re like us, then you know big concerts with famous artists don’t compare to the thrill of “discovering” a rising musician at your nearby dive bar. We’re trying to make more of that happen by creating a community where fans support local artists for a small monthly fee, and in return get concerts, swag, and clout to vote musicians into the network.</p>
+      <br>
+      <p>Want to start the next wave of music discovery? Support and <a class="discover" href="#">discover</a> bands like those below by becoming a Bandjo fan.</p>
+    </div>
+  </div>
 
-	<div class="callToAction">
-		<input type="email" placeholder="john@email.com">
-		<button class="fansCTA">Sounds cool, I'm in</button>
-		<button class="bandsCTA">Sounds cool, I'm in</button>
-	</div>
+  <div class="callToAction">
+    <input type="email" placeholder="john@email.com">
+    <button class="fansCTA">Sounds cool, I'm in</button>
+    <button class="bandsCTA">Sounds cool, I'm in</button>
+  </div>
 
-	<div class="player">
-		<iframe id="sc-widget" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F7794254&show_artwork=false&show_comments=false&show_playcount=false&sharing=false&liking=false&buying=false&color=3e1d56&themer=3e1d56&auto_play=true&download=false"></iframe>
-	</div>
+  <div class="player">
+    <div class="prev">
+      <div class="prevButton"></div>
+    </div>
+    <iframe id="sc-widget" width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F7794254&show_artwork=false&show_comments=false&show_playcount=false&sharing=false&liking=false&buying=false&color=3e1d56&themer=3e1d56&auto_play=false&download=false"></iframe>
+    <div class="next">
+      <div class="nextButton"></div>
+    </div>
+  </div>
 
-	<div class="player overlay"></div>
+  <div class="player overlay"></div>
 </div>
 
 
 <script type="text/JavaScript">
 
+  var iframeElement   = document.querySelector('iframe');
+  var iframeElementID = iframeElement.id;
+  var widget1         = SC.Widget(iframeElement);
+  var widget2         = SC.Widget(iframeElementID);
+  // widget1 === widget2
+
+  $(".next").click(function() {
+    widget1.next()
+  })
+
+  $(".prev").click(function() {
+    widget1.prev()
+  })  
+
   $(".bandsLink").click(function() {
-  	$(this).fadeOut(300);
-  	$(".fansLink").delay(300).fadeIn(300).css({"display":"inline"});
-  	$(".fans.tagline").fadeOut(300);
-  	$(".bands.tagline").delay(300).fadeIn(300);
-  	$(".fansCTA").hide()
-  	$(".bandsCTA").show()
+    $(this).fadeOut(300);
+    $(".fansLink").delay(300).fadeIn(300).css({"display":"inline"});
+    $(".fans.tagline").fadeOut(300);
+    $(".bands.tagline").delay(300).fadeIn(300);
+    $(".fansCTA").hide()
+    $(".bandsCTA").show()
   });
 
   $(".fansLink").click(function() {
-  	$(this).fadeOut(300);
-  	$(".bandsLink").delay(300).fadeIn(300)
-  	$(".bands.tagline").fadeOut(300);
-  	$(".fans.tagline").delay(300).fadeIn(300);
-  	$(".bandsCTA").hide()
-  	$(".fansCTA").show()
+    $(this).fadeOut(300);
+    $(".bandsLink").delay(300).fadeIn(300)
+    $(".bands.tagline").fadeOut(300);
+    $(".fans.tagline").delay(300).fadeIn(300);
+    $(".bandsCTA").hide()
+    $(".fansCTA").show()
   });
 
   $(".learnMore a").click(function() {
-  	$(this).fadeOut(300)
-  	$(".pitch").fadeOut(300)
-  	$(".learnMoreContent").delay(300).fadeIn(300)
+    $(this).fadeOut(300)
+    $(".pitch").fadeOut(300)
+    $(".learnMoreContent").delay(300).fadeIn(300)
   })
 
   $("a.discover").click(function() {
-  	$(".player.overlay").fadeIn(150)
-  	$(".player.overlay").fadeOut(300)
+    $(".player.overlay").fadeIn(150)
+    $(".player.overlay").fadeOut(300)
   })
 
   $("#putTheWidgetHere").hide();
   $("#landingPage button").click(function() {
-  	$("#landingPage").fadeOut(300);
-  	$("#putTheWidgetHere").delay(300).fadeIn(1000);
+    $("#landingPage").fadeOut(300);
+    $("#putTheWidgetHere").delay(300).fadeIn(1000);
   });
 
   $(".player").delay(300).animate({
-  	"height": "123px"
+    "height": "125px"
   },300)
 
   $(".player img").delay(600).animate({
-  	"opacity": 1
+    "opacity": 1
   },300)
 
 </script>

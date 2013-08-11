@@ -18,6 +18,8 @@ body {
   // background-image: url("http://heightslibrary.org/wordpress/music/wp-content/uploads/2012/02/concert-audience-stock1214.jpg");
   color: white;
   @include box-sizing(border-box);
+  height: 100%;
+  overflow: hidden;
 }
 
 a {
@@ -128,9 +130,13 @@ ul#user_nav {
 }
 
 .stageLight {
-  // background-image: url('images/stage_light.png');
   position: absolute;
   z-index: 0;
+  background-image: url(image_path('stage_light.png'));
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100%;
+  width: 638px;
 
   &.one {
     top: -5px;
@@ -153,7 +159,7 @@ ul#user_nav {
   .landingPageContent {
       position: absolute;
       left: 75px;
-      bottom: 290px;
+      bottom: 210px;
 
     .brand {
       color: white;
@@ -225,7 +231,7 @@ ul#user_nav {
   .callToAction {
     position: absolute;
     right: 75px;
-    bottom: 290px;
+    bottom: 210px;
     width: 300px;
     text-align: center;
     // margin-left: 150px;
@@ -263,10 +269,50 @@ ul#user_nav {
     width: 100%;
     background-color: #f5f5f5;
 
-    img {
-      opacity: 0;
-      display: block;
-      margin: 0 auto;
+    .prev {
+      position: absolute;
+      width: 10%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      background-image: url(image_path('prevIcon.png'));
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      &:hover {
+        background-color: tint($primary_color, 85%);
+      }
+
+      &:active {
+        background-color: tint($primary_color, 70%);
+      }
+    }
+
+    iframe {
+      position: absolute;
+      left: 10%;
+      right: 10%;
+      width: 80%;
+      height: 125px;
+    }
+
+    .next {
+      position: absolute;
+      width: 10%;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url(image_path('nextIcon.png'));
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      &:hover {
+        background-color: tint($primary_color, 85%);
+      }
+
+      &:active {
+        background-color: tint($primary_color, 70%);
+      }      
     }
 
     &.overlay {
