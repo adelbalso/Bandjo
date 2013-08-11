@@ -63,6 +63,8 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
 }
 
 ul#user_nav {
+  position: relative;
+  z-index: 10;
   float: right;
   margin: 40px 75px;
   color: white;
@@ -128,6 +130,7 @@ ul#user_nav {
 .stageLight {
   // background-image: url('images/stage_light.png');
   position: absolute;
+  z-index: 0;
 
   &.one {
     top: -5px;
