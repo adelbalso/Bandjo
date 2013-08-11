@@ -189,6 +189,10 @@ ul#user_nav {
       &:hover {
         background-color: shade(#E87825, 10%);
       }
+
+      &.bandsCTA {
+        display: none;
+      }
     }
   }
 
@@ -211,3 +215,6 @@ ul#user_nav {
   width: 20em;
   margin: 0 auto;
 }
+
+::-moz-selection { background: #E87825; }
+::selection { background: #E87825; }

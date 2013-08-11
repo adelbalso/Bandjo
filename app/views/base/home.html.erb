@@ -14,7 +14,8 @@
 		<p class="bands tagline">Immediate fanbase. <span class="textEmphasis">Regular gigs.</span> Community funding. <span class="textEmphasis">Do what you love.</span> New York City.</p>
 	</div>
 	<div class="callToAction">
-		<button>Sounds cool, I'm in</button>
+		<button class="fansCTA">Sounds cool, I'm in</button>
+		<button class="bandsCTA">Sounds cool, I'm in</button>
 	</div>
 
 	<div class="player">
@@ -32,6 +33,8 @@
   	$(".fansLink").delay(300).fadeIn(300).css({"display":"inline"});
   	$(".fans.tagline").fadeOut(300);
   	$(".bands.tagline").delay(300).fadeIn(300);
+  	$(".fansCTA").hide()
+  	$(".bandsCTA").show()
   });
 
   $(".fansLink").click(function() {
@@ -39,6 +42,8 @@
   	$(".bandsLink").delay(300).fadeIn(300)
   	$(".bands.tagline").fadeOut(300);
   	$(".fans.tagline").delay(300).fadeIn(300);
+  	$(".bandsCTA").hide()
+  	$(".fansCTA").show()
   });
 
   $("#putTheWidgetHere").hide();
