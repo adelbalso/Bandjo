@@ -1,18 +1,30 @@
 <div id="landingPage">
-	<div class="brand">
-		<div class="banjoLogoHead">
-			<%= image_tag("banjo_head.png") %>
+	<div class="landingPageContent">
+		<div class="brand">
+			<div class="banjoLogoHead">
+				<%= image_tag("banjo_head.png") %>
+			</div>
+			<h1>Bandjo</h1>
+			<div class="banjoLogoBody">
+				<%= image_tag("banjo_body.png") %>
+			</div>
 		</div>
-		<h1>Bandjo</h1>
-		<div class="banjoLogoBody">
-			<%= image_tag("banjo_body.png") %>
+
+		<div class="pitch">
+			<p class="fans tagline">Rising bands. <span class="textEmphasis">Different musical genres.</span> Initimate concerts. <span class="textEmphasis">Exclusive community.</span> New York City.</p>
+			<p class="bands tagline">Immediate fanbase. <span class="textEmphasis">Regular gigs.</span> Community funding. <span class="textEmphasis">Do what you love.</span> New York City.</p>
+		</div>
+		<div class="learnMore">
+			<a href="#">Learn more >></a>
+		</div>
+
+		<div class="learnMoreContent">
+			<p>If you’re like us, then you know big concerts with famous artists don’t compare to the thrill of “discovering” a rising musician at your nearby dive bar. We’re trying to make more of that happen by creating a community where fans support local artists for a small monthly fee, and in return get concerts, swag, and clout to vote musicians into the network.</p>
+			<br>
+			<p>Want to start the next wave of music discovery? Support and <a class="discover" href="#">discover</a> bands like these by becoming a Bandjo fan.</p>
 		</div>
 	</div>
 
-	<div class="pitch">
-		<p class="fans tagline">Rising bands. <span class="textEmphasis">Different musical genres.</span> Initimate concerts. <span class="textEmphasis">Exclusive community.</span> New York City.</p>
-		<p class="bands tagline">Immediate fanbase. <span class="textEmphasis">Regular gigs.</span> Community funding. <span class="textEmphasis">Do what you love.</span> New York City.</p>
-	</div>
 	<div class="callToAction">
 		<input type="email" placeholder="john@email.com">
 		<button class="fansCTA">Sounds cool, I'm in</button>
@@ -22,6 +34,7 @@
 	<div class="player">
 		<%= image_tag("track_img.png") %>
 	</div>
+	<div class="player overlay"></div>
 </div>
 
 <div id="putTheWidgetHere"></div>
@@ -46,6 +59,17 @@
   	$(".bandsCTA").hide()
   	$(".fansCTA").show()
   });
+
+  $(".learnMore a").click(function() {
+  	$(this).fadeOut(300)
+  	$(".pitch").fadeOut(300)
+  	$(".learnMoreContent").delay(300).fadeIn(300)
+  })
+
+  $("a.discover").click(function() {
+  	$(".player.overlay").show()
+  	$(".player.overlay").fadeOut(300)
+  })
 
   $("#putTheWidgetHere").hide();
   $("#landingPage button").click(function() {

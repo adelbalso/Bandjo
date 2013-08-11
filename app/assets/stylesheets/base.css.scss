@@ -5,7 +5,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $primary_color: #3e1d56;
-$link_hover: #E2F3F0;
+$link_hover: #E87825;
 $cta-color: #E87825;
 
 @mixin test() {
@@ -34,7 +34,6 @@ a, button, input {
 }
 
 p {
-  font-size: 1.3em !important;
   line-height: 1.5em !important;
 }
 
@@ -83,8 +82,8 @@ ul#user_nav {
         border: 2px solid white;
 
         &:hover {
-          border: 2px solid $link_hover;
-          background-color: $link_hover;
+          border: 2px solid white;
+          background-color: white;
           color: $primary_color;
         }
       }
@@ -97,67 +96,76 @@ ul#user_nav {
 }
 
 #landingPage {
-  .brand {
-    position: absolute;
-    left: 75px;
-    bottom: 385px;
-    color: white;
-    text-align: center;
-    font-size: 7em;
-    font-weight: 300;
-    height: 100px;
-    @include clearfix();
+  .landingPageContent {
+      position: absolute;
+      left: 75px;
+      bottom: 290px;
 
-    .banjoLogoHead {
-      float: left;
-      width: 110px;
+    .brand {
+      color: white;
+      text-align: center;
+      font-size: 7em;
+      font-weight: 300;
+      height: 100px;
+      margin-bottom: 40px;
+      @include clearfix();
 
-      img {
+      .banjoLogoHead {
+        float: left;
         width: 110px;
+
+        img {
+          width: 110px;
+        }
       }
-    }
 
-    h1 {
-      float: left;
-      font-size: 0.8em;
-      margin: 0 0.2em;
-    }
+      h1 {
+        float: left;
+        font-size: 0.8em;
+        margin: 0 0.2em;
+      }
 
-    .banjoLogoBody {
-      float: left;
-      width: 140px;
-
-      img {
+      .banjoLogoBody {
+        float: left;
         width: 140px;
+
+        img {
+          width: 140px;
+        }
       }
     }
 
-    img {
+    .pitch {
+      width: 600px;
+      margin-bottom: 40px;
+
+      p {
+        font-size: 1.3em !important;
+      }
+
+      .tagline {
+        .textEmphasis {
+          color: #1AD3D4;
+          // font-weight: 600;
+          clear: left;
+        }
+
+        &.bands {
+          display: none;
+        }
+      }
+    }
+
+    .learnMoreContent {
+      display: none;
+      width: 600px;
+      font-size: 1em !important;
     }
   }
 
   h2 {
     font-size: 2.5em;
     padding: 0.5em 0;
-  }
-
-  .pitch {
-    position: absolute;
-    left: 75px;
-    bottom: 290px;
-    width: 600px;
-
-    .tagline {
-      .textEmphasis {
-        color: #1AD3D4;
-        // font-weight: 600;
-        clear: left;
-      }
-
-      &.bands {
-        display: none;
-      }
-    }
   }
 
   .callToAction {
@@ -205,6 +213,11 @@ ul#user_nav {
       opacity: 0;
       display: block;
       margin: 0 auto;
+    }
+
+    &.overlay {
+      display: none;
+      background-color: $cta_color;
     }
   }
 }
