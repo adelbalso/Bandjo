@@ -19,11 +19,6 @@ body {
   @include box-sizing(border-box);
 }
 
-#container {
-  width: 960px;
-  margin: 0 auto;
-}
-
 a {
   color: white;
 }
@@ -61,10 +56,14 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
   }
 }
 
-#user_nav {
-  text-align: center;
-  margin: 2em 0;
+ul#user_nav {
+  float: right;
+  margin: 2em;
   color: white;
+
+  li {
+    display: inline;
+  }
   
   a {
     padding: 0 1em;
@@ -73,6 +72,9 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
 
 #landingPage {
   .brand {
+    position: absolute;
+    left: 75px;
+    bottom: 295px;
     background-color: RGBA(244,215,139,0.5);
     color: white;
     text-align: center;
@@ -119,7 +121,10 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
   }
 
   .pitch {
-    width: 66%;
+    position: absolute;
+    left: 75px;
+    bottom: 200px;
+    width: 600px;
     @include border-radius(5px);
 
     .tagline {
@@ -130,7 +135,7 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
       margin: 0.5em 0;
 
       .textEmphasis {
-        color: #70838C;
+        color: RGBA(244,215,139,1);
         // font-weight: 600;
         clear: left;
       }
@@ -138,24 +143,26 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
   }
 
   .callToAction {
+    position: absolute;
+    left: 75px;
+    bottom: 75px;
     border: 2px dashed white;
     text-align: center;
-    width: 51%;
     margin-top: 2.5em;
-  }
-
-  button {
-    display: block;
-    margin: 1em auto;
-    border: none;
-    color: white;
     padding: 1em;
-    background-color: #E87825;
-    @include border-radius(5px);
-    font-size: 1.5em;
 
-    &:hover {
-      background-color: shade(#E87825, 10%);
+    button {
+      display: block;
+      border: none;
+      color: white;
+      padding: 1em;
+      background-color: #E87825;
+      @include border-radius(5px);
+      font-size: 1.5em;
+
+      &:hover {
+        background-color: shade(#E87825, 10%);
+      }
     }
   }
 }
