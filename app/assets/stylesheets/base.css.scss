@@ -119,12 +119,11 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
   }
 
   .pitch {
-    float: left;
-    width: 33%;
+    width: 66%;
     @include border-radius(5px);
 
     .tagline {
-      background-color: RGBA(244,215,139,0.5);
+      background-color: RGBA(0,0,0,0.2);
       text-align: center;
       // display: inline-block;
       padding: 0.5em;
@@ -140,9 +139,7 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
 
   .callToAction {
     border: 2px dashed white;
-    margin: 0 5%;
     text-align: center;
-    float: right;
     width: 51%;
     margin-top: 2.5em;
   }
