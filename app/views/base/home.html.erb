@@ -59,6 +59,7 @@
 
   <div class="player overlay"></div>
 </div>
+<div class="thanksText" style="display:none;">Thank you!<br>We'll get back to you shortly.</div>
 
 
 <script type="text/JavaScript">
@@ -110,10 +111,11 @@
   })
 
   $("#putTheWidgetHere").hide();
-  $("#landingPage button").click(function() {
+
+  $(".callToAction button").click(function() {
     $("#landingPage").fadeOut(300);
-    $("#putTheWidgetHere").delay(300).fadeIn(1000);
-  });
+    $(".thanksText").fadeIn(300);
+  })
 
   $(".player").delay(300).animate({
     "height": "125px"
