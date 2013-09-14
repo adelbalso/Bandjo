@@ -223,6 +223,26 @@ ul#user_nav {
       display: none;
       width: 600px;
       font-size: 1em !important;
+
+      .subHeadline {
+        font-size: 24px;
+      }
+
+      .learnMoreWrapper {
+        @include clearfix();
+        margin-bottom: 30px;
+      }       
+
+      .learnMoreImg {
+        float: left;
+        width: 20%;
+      }
+
+      .learnMoreCopy {
+        float: left;
+        width: 70%;
+        padding-left: 10%;
+      }
     }
   }
 
